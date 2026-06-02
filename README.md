@@ -96,14 +96,18 @@ Other checks:
 
 ## Cryptographic keys
 
-Development RSA key pairs are included for local use:
+RSA key pairs are required for local development but are not included in the repo.
+Generate your own:
 
-| File | Used by |
-|------|---------|
-| `AppA.API/appA_private.pem` | App A — JWT signing |
-| `AppB.API/appA_public.pem` | App B — JWT verification |
+```bash
+# Generate private key
+openssl genrsa -out AppA.API/appA_private.pem 2048
 
-These are **development keys only**. Do not use them in production.
+# Extract public key
+openssl rsa -in AppA.API/appA_private.pem -pubout -out AppB.API/appA_public.pem
+```
+
+These files are gitignored and should never be committed.
 
 ## Configuration
 
