@@ -43,6 +43,6 @@ public class SecureActionController : ControllerBase
         var sessionId = _sessionService.CreateSession(validationResult.CallerId!);
         
         _logger.LogInformation("Secure action executed successfully for caller: {Caller} with session ID: {SessionId}", validationResult.CallerId, sessionId);
-        return Ok(new { message = "Secure action executed successfully!", caller = validationResult.CallerId, sessionId });
+        return Ok(new SecureActionResult( "Secure action executed successfully!", validationResult.CallerId!, sessionId));
     }
 }
