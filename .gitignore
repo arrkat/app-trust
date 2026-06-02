@@ -25,6 +25,7 @@ bld/
 *.suo
 *.sln.docstates
 *.DotSettings.user
+*.pem
 
 ## Test / coverage
 [Tt]est[Rr]esult*/
