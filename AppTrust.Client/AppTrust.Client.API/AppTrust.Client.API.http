@@ -1,0 +1,6 @@
+@AppTrust.Client.API_HostAddress = https://localhost:7203
+
+GET {{AppTrust.Client.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

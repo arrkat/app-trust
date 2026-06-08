@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DefaultLaunchProfile>https</DefaultLaunchProfile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AppTrust.Sdk" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.21" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppTrust.Client.Infrastructure\AppTrust.Client.Infrastructure.csproj" />
+    <ProjectReference Include="..\AppTrust.Client.Contracts\AppTrust.Client.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="apptrust_client_private.pem">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

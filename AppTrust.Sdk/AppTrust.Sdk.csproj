@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>AppTrust.Sdk</RootNamespace>
+    <AssemblyName>AppTrust.Sdk</AssemblyName>
+
+    <PackageId>AppTrust.Sdk</PackageId>
+    <Version>1.1.1</Version>
+    <Authors>AppTrust</Authors>
+    <Description>M2M trust contracts, strategy interfaces, and shared helpers for AppTrust services.</Description>
+    <PackageTags>apptrust;m2m;jwt;mtls;trust</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AppTrust.Sdk.Tests/**" />
+    <None Remove="AppTrust.Sdk.Tests/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.3.0" />
+  </ItemGroup>
+
+</Project>

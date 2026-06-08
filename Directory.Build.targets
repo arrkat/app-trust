@@ -1,0 +1,15 @@
+<Project>
+  <!-- Pack AppTrust.Sdk into the local feed before consumers restore. -->
+  <Target Name="PackAppTrustSdk"
+          BeforeTargets="Restore"
+          Condition="'$(MSBuildProjectName)' != 'AppTrust.Sdk' And '$(DesignTimeBuild)' != 'true'">
+    <PropertyGroup>
+      <_AppTrustSdkProject>$(MSBuildThisFileDirectory)AppTrust.Sdk\AppTrust.Sdk.csproj</_AppTrustSdkProject>
+      <_AppTrustSdkFeed>$(MSBuildThisFileDirectory)local-nuget-feed</_AppTrustSdkFeed>
+    </PropertyGroup>
+    <MakeDir Directories="$(_AppTrustSdkFeed)" />
+    <MSBuild Projects="$(_AppTrustSdkProject)"
+             Targets="Pack"
+             Properties="Configuration=$(Configuration);PackageOutputPath=$(_AppTrustSdkFeed);PackageVersion=1.0.0" />
+  </Target>
+</Project>
