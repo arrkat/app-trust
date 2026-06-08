@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+
+  <ItemGroup>
+
+    <ProjectReference Include="..\AppTrust.Client.Contracts\AppTrust.Client.Contracts.csproj" />
+
+    <ProjectReference Include="..\..\AppTrust.Service\AppTrust.Service.Contracts\AppTrust.Service.Contracts.csproj" />
+
+  </ItemGroup>
+
+
+
+  <PropertyGroup>
+
+    <TargetFramework>net8.0</TargetFramework>
+
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <Nullable>enable</Nullable>
+
+  </PropertyGroup>
+
+
+
+  <ItemGroup>
+
+    <InternalsVisibleTo Include="AppTrust.Client.Tests" />
+    <InternalsVisibleTo Include="AppTrust.E2E.Tests" />
+
+    <InternalsVisibleTo Include="AppTrust.Client.API" />
+
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+
+    <PackageReference Include="AppTrust.Sdk" Version="1.1.1" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+
+    <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2" />
+
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.3.0" />
+
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
+
+  </ItemGroup>
+
+
+
+</Project>
+
